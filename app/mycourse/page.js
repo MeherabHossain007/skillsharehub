@@ -7,7 +7,7 @@ import warning from "../images/warning.png";
 import announcement from "../images/announce.png";
 const myCoursePage = () => {
   return (
-    <div>
+    <div className="md:w-[1800px] mx-auto ">
       <Heading title={"Read before you start"} picture={warning}></Heading>
       <Heading title={"Announcement  title"} picture={announcement}></Heading>
       <Profile></Profile>
