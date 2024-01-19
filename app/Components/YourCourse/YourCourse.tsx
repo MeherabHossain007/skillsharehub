@@ -17,12 +17,12 @@ const YourCourse = () => {
       })
       .then((data) => {
         setData(data.courses);
-        console.log(data); // Log the data to the console
+    
       })
       .catch((error) => console.error("Error fetching data:", error));
   }, []);
   
-  console.log(data)
+
   
 
   return (
