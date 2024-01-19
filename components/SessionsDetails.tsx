@@ -1,4 +1,4 @@
-import group from "../../images/Group 550.png";
+import group from "../app/images/Group 550.png";
 
 // eslint-disable-next-line react/prop-types
 const SessionsDetails = ({ item }) => {
@@ -9,10 +9,10 @@ const SessionsDetails = ({ item }) => {
       <div className="card card-side bg-base-100 shadow-2xl  md:w-[350px] md:mx-[30px] md:my-[0px] my-[100px]">
         <figure className="relative">
                {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img className="rounded-lg" src={img} alt="Movie" />
+          <img className="rounded-lg" src={img} alt="" />
           <div className="absolute right-[-70px] top-[90px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={group} alt="Movie" />
+            <img src={group} alt="" />
           </div>
         </figure>
         <div className="card-body">

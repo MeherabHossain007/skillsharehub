@@ -1,10 +1,11 @@
-import Hero from './../Components/Hero/Hero';
-import Filter from './../Components/Filter/Filter';
+import Hero from './../../components/Hero';
+import Filter from './../../components/Filter';
 
 
 const FilterCourse = () => {
     return (
         <div className=" md:w-[1800px] mx-auto">
+      
          <Hero></Hero>
          <Filter></Filter>
          

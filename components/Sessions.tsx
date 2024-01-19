@@ -1,18 +1,19 @@
 "use client"; // This is a client component
 import { useState } from "react";
 import { useEffect } from "react";
-import SessionsDetails from './../SessionsDetails/SessionsDetails';
-
+import SessionsDetails from "./SessionsDetails";
 
 const Sessions = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/Yousufjoy/fydpData1/main/data2.json")
+    fetch(
+      "https://raw.githubusercontent.com/Yousufjoy/fydpData1/main/data2.json"
+    )
       .then((res) => res.json())
       .then((data) => setData(data.video));
   }, []);
-  console.log(data)
+  console.log(data);
 
   return (
     <>

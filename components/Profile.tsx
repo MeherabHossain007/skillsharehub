@@ -1,13 +1,13 @@
 "use client"; // This is a client component
 
 import Image from "next/image";
-import icon1 from "../../images/Trophy.png";
-import icon2 from "../../images/Diploma.png";
+import icon1 from "../app/images/Trophy.png";
+import icon2 from "../app/images/Diploma.png";
 
-import icon3 from "../../images/Creative Commons.png";
-import avatar from "../../images/avatar.png"
-import weather from "../../images/weather.png"
-import moon from "../../images/moon.png"
+import icon3 from "../app/images/Creative Commons.png";
+import avatar from "../app/images/avatar.png"
+import weather from "../app/images/weather.png"
+import moon from "../app/images/moon.png"
 import { useEffect, useState } from "react";
 
 const Profile = () => {

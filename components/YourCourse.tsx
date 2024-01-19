@@ -1,7 +1,8 @@
 "use client"; // This is a client component
 
 import { useState, useEffect } from "react";
-import CourseDetails from './../CourseDetails/CourseDetails';
+import CourseDetails from './CourseDetails';
+
 
 
 const YourCourse = () => {
