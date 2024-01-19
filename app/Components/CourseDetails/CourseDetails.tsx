@@ -25,7 +25,9 @@ const CourseDetails = ({ data }) => {
       <div className="my-4">
         <div className="card w-96 md:h-[400px] bg-base-100 shadow-xl relative">
           <figure>
-          <Image src={img} alt="Description" width={500} height={300} />
+          <Image src={img}  alt="Description" width={500} height={300} />
+
+        
           </figure>
           <div className="card-body">
             <h2 className="card-title absolute top-[20px] left-[25px]">

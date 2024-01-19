@@ -1,7 +1,7 @@
 "use client"; // This is a client component
 
 import { useState, useEffect } from "react";
-import FilterCard from "./../FilterCard/FilterCard";
+import FilterCard from './../FilterCard';
 
 
 const Filter = () => {

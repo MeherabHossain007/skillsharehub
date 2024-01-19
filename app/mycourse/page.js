@@ -5,6 +5,7 @@ import YourCourse from "./../Components/YourCourse/YourCourse";
 import OnlineCourses from "./../Components/OnlineCourses/OnlineCourses";
 import warning from "../images/warning.png";
 import announcement from "../images/announce.png";
+import Sessions from './../Components/Sessions/Sessions';
 const myCoursePage = () => {
   return (
     <div className="md:w-[1800px] mx-auto ">
@@ -13,6 +14,7 @@ const myCoursePage = () => {
       <Profile></Profile>
       <YourCourse></YourCourse>
       <OnlineCourses></OnlineCourses>
+      <Sessions></Sessions>
     </div>
   );
 };
