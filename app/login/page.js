@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 const LoginPage = () => {
@@ -44,16 +43,19 @@ const LoginPage = () => {
                   </label>
                 </div>
                 <div className="form-control mt-6">
-                  <button className="btn btn-primary">Login</button>
+                  <Link href="/mycourse" className="btn btn-primary">
+               
+                    <button>Login</button>
+                  </Link>
                   <div className="text-center mt-4">
                     <p className="text-gray-600">
                       {/* eslint-disable-next-line react/no-unescaped-entities */}
                       Don't have an account?
-                     
-                      <Link href="/register" className="text-[#5A66FF] font-semibold">
-                   
-                          Click here to register
-                     
+                      <Link
+                        href="/register"
+                        className="text-[#5A66FF] font-semibold"
+                      >
+                        Click here to register
                       </Link>
                     </p>
                   </div>

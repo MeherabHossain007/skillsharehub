@@ -1,0 +1,88 @@
+{
+  "cardData": [
+    {
+      "star": "4",
+      "price": "36$",
+      "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "4.5",
+      "price": "45$",
+    "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "3.5",
+      "price": "30$",
+       "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "5",
+      "price": "50$",
+   "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "4.2",
+      "price": "40$",
+       "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "3.8",
+      "price": "32$",
+     "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "4.7",
+      "price": "48$",
+      "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "3.9",
+      "price": "34$",
+    "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "4.3",
+      "price": "42$",
+      "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "4.9",
+      "price": "55$",
+   "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "4.1",
+      "price": "38$",
+     "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    },
+    {
+      "star": "3.6",
+      "price": "28$",
+     "subHeading": "Johne doe",
+      "courseTitle": "Motion Graphics: Create a Nice Typography Animation",
+      "img": "https://i.ibb.co/Jdr71zr/crs1.png"
+    }
+  ]
+}

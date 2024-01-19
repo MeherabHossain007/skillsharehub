@@ -1,14 +1,15 @@
 "use client"; // This is a client component
 
 import { useState, useEffect } from "react";
-import FilterCard from './FilterCard';
+import InstructorFilterCard from './InstructorFilterCard';
 
 
 
-const Filter = () => {
+
+const InstructorFilter = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/Yousufjoy/fydpData1/main/data3.json")
+    fetch("https://raw.githubusercontent.com/Yousufjoy/fydpData1/main/data5.json")
       .then((res) => res.json())
       .then((data) => setData(data.cardData));
   }, []);
@@ -185,7 +186,7 @@ const Filter = () => {
               // eslint-disable-next-line react/jsx-key
               data.map((item) => (
                 // eslint-disable-next-line react/jsx-key
-                <FilterCard data={item} key={item.id}></FilterCard>
+                <InstructorFilterCard data={item} key={item.id}></InstructorFilterCard>
               ))
             }
           </div>
@@ -195,4 +196,4 @@ const Filter = () => {
   );
 };
 
-export default Filter;
+export default InstructorFilter;
