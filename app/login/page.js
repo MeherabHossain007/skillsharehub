@@ -1,6 +1,71 @@
+"use client"; // This is a client component
 import Link from "next/link";
+import React, { useContext, useEffect, useRef, useState } from "react";
+
+import Swal from "sweetalert2";
+import {
+  loadCaptchaEnginge,
+  validateCaptcha,
+  LoadCanvasTemplate,
+} from "react-simple-captcha";
 
 const LoginPage = () => {
+  const [disabled, setDisabled] = useState(true);
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+    const captchaValue = captchaRef.current.value;
+  };
+
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
+
+  const captchaRef = useRef(null);
+
+  const handleValidateCaptcha = () => {
+    const value = captchaRef.current.value;
+
+    if (validateCaptcha(value)) {
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Captcha Matched",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setDisabled(false);
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Captcha did not Match!!",
+        text: "Something went wrong!",
+        footer: '<a href="#">Give Correct Captcha.</a>',
+      });
+      setDisabled(true);
+    }
+  };
+
+  // Move captcha validation here, after defining value
+  const captchaValue = captchaRef.current?.value || "";
+
+  if (!validateCaptcha(captchaValue)) {
+    // If captcha validation fails, show an error
+    Swal.fire({
+      icon: "error",
+      title: "Captcha did not Match!!",
+      text: "Something went wrong!",
+      footer: '<a href="#">Give Correct Captcha.</a>',
+    });
+    setDisabled(true);
+    return (
+      // Return some JSX here if needed
+      <div>Error in captcha validation</div>
+    );
+  }
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -14,13 +79,14 @@ const LoginPage = () => {
             </p>
 
             <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
-              <form className="card-body">
+              <form onSubmit={handleLogin} className="card-body">
                 <div className="form-control">
                   <label className="label">
                     <span className="label-text">Email</span>
                   </label>
                   <input
                     type="email"
+                    name="email"
                     placeholder="email"
                     className="input input-bordered"
                     required
@@ -32,6 +98,7 @@ const LoginPage = () => {
                   </label>
                   <input
                     type="password"
+                    name="password"
                     placeholder="password"
                     className="input input-bordered"
                     required
@@ -42,11 +109,31 @@ const LoginPage = () => {
                     </a>
                   </label>
                 </div>
+                <div className="form-control">
+                  <label className="label">
+                    <LoadCanvasTemplate />
+                  </label>
+                  <input
+                    type="text"
+                    ref={captchaRef}
+                    name="captcha"
+                    placeholder="Type the text above"
+                    className="input input-bordered"
+                    required
+                  />
+                  <button
+                    onClick={handleValidateCaptcha}
+                    className=" btn btn-outline btn-xs mt-2"
+                    type="button"
+                  >
+                    Validate
+                  </button>
+                </div>
                 <div className="form-control mt-6">
                   <Link href="/mycourse" className="btn btn-primary">
-               
                     <button>Login</button>
                   </Link>
+
                   <div className="text-center mt-4">
                     <p className="text-gray-600">
                       {/* eslint-disable-next-line react/no-unescaped-entities */}
