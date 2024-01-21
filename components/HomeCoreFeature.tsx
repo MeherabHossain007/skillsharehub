@@ -63,9 +63,9 @@ const HomeCoreFeature = () => {
               in the respective field.
             </p>
           </div>
-          <div className=" w-[300px] text-center mt-[50px]">
+          <div className=" w-[300px] text-center mt-[50px] ">
             <Image className="ml-[100px]" src={tutor} alt=""></Image>
-            <h1 className="text-[22px] font-semibold">Request Tutor</h1>
+            <h1 className="text-[22px] font-semibold md:my-[5px]">Request Tutor</h1>
             <p className=" text-[16px]">
               Capability for users to request a tutor based on specific learning
               needs.
