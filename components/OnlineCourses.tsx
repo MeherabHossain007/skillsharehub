@@ -1,10 +1,10 @@
-import icon1 from "../app/images/icon1.0.png";
-import icon2 from "../app/images/icon1.png";
-import icon3 from "../app/images/icon2.png";
-import online from "../app/images/online.png"
-import instructor from "../app/images/instructor.png";
+import icon1 from "../assets/images/icon1.0.png";
+import icon2 from "../assets/images/icon1.png";
+import icon3 from "../assets/images/icon2.png";
+import online from "../assets/images/online.png"
+import instructor from "../assets/images/instructor.png";
 
-import concept from "../app/images/concept.png"
+import concept from "../assets/images/concept.png"
 import Image from "next/image";
 
 const OnlineCourses = () => {
@@ -31,7 +31,7 @@ const OnlineCourses = () => {
           </figure>
           <div className="card-body">
             <h2 className="card-title">
-              ASO & Mobile App Marketing: Monetize Your App
+              ASO & Mobile assets Marketing: Monetize Your assets
             </h2>
             <div className="md:flex  justify-between pt-[20px]">
               <div className="flex  ">

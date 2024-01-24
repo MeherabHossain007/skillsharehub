@@ -1,71 +1,89 @@
 "use client"; // This is a client component
+import { supabase } from "@/supabase/client";
+import { url } from "inspector";
+import { NextApiResponse } from "next";
+import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useRef, useState } from "react";
 
 import Swal from "sweetalert2";
-import {
-  loadCaptchaEnginge,
-  validateCaptcha,
-  LoadCanvasTemplate,
-} from "react-simple-captcha";
+// import {
+//   loadCaptchaEnginge,
+//   validateCaptcha,
+//   LoadCanvasTemplate,
+// } from "react-simple-captcha";
 
-const LoginPage = () => {
+const LoginPage = (res: NextApiResponse) => {
   const [disabled, setDisabled] = useState(true);
 
-  const handleLogin = (e) => {
+  const router = useRouter();
+
+  const handleLogin = async (e: {
+    preventDefault: () => void;
+    target: any;
+  }) => {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
     const password = form.password.value;
-    const captchaValue = captchaRef.current.value;
-  };
 
-  useEffect(() => {
-    loadCaptchaEnginge(6);
-  }, []);
+    let { data } = await supabase.auth.signInWithPassword({
+      email: email,
+      password: password,
+    });
 
-  const captchaRef = useRef(null);
-
-  const handleValidateCaptcha = () => {
-    const value = captchaRef.current.value;
-
-    if (validateCaptcha(value)) {
-      Swal.fire({
-        position: "top",
-        icon: "success",
-        title: "Captcha Matched",
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      setDisabled(false);
-    } else {
-      Swal.fire({
-        icon: "error",
-        title: "Captcha did not Match!!",
-        text: "Something went wrong!",
-        footer: '<a href="#">Give Correct Captcha.</a>',
-      });
-      setDisabled(true);
+    if (data) {
+      router.push("http://localhost:3000/auth/callback");
     }
   };
 
-  // Move captcha validation here, after defining value
-  const captchaValue = captchaRef.current?.value || "";
+  // useEffect(() => {
+  //   loadCaptchaEnginge(6);
+  // }, []);
 
-  if (!validateCaptcha(captchaValue)) {
-    // If captcha validation fails, show an error
-    Swal.fire({
-      icon: "error",
-      title: "Captcha did not Match!!",
-      text: "Something went wrong!",
-      footer: '<a href="#">Give Correct Captcha.</a>',
-    });
-    setDisabled(true);
-    return (
-      // Return some JSX here if needed
-      <div>Error in captcha validation</div>
-    );
-  }
+  // const captchaRef = useRef(null);
+
+  // const handleValidateCaptcha = () => {
+  //   const value = captchaRef.current.value;
+
+  //   if (validateCaptcha(value)) {
+  //     Swal.fire({
+  //       position: "top",
+  //       icon: "success",
+  //       title: "Captcha Matched",
+  //       showConfirmButton: false,
+  //       timer: 1500,
+  //     });
+  //     setDisabled(false);
+  //   } else {
+  //     Swal.fire({
+  //       icon: "error",
+  //       title: "Captcha did not Match!!",
+  //       text: "Something went wrong!",
+  //       footer: '<a href="#">Give Correct Captcha.</a>',
+  //     });
+  //     setDisabled(true);
+  //   }
+  // };
+
+  // Move captcha validation here, after defining value
+  // const captchaValue = captchaRef.current?.value || "";
+
+  // if (!validateCaptcha(captchaValue)) {
+  //   // If captcha validation fails, show an error
+  //   Swal.fire({
+  //     icon: "error",
+  //     title: "Captcha did not Match!!",
+  //     text: "Something went wrong!",
+  //     footer: '<a href="#">Give Correct Captcha.</a>',
+  //   });
+  //   setDisabled(true);
+  //   return (
+  //     // Return some JSX here if needed
+  //     <div>Error in captcha validation</div>
+  //   );
+  // }
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -109,7 +127,7 @@ const LoginPage = () => {
                     </a>
                   </label>
                 </div>
-                <div className="form-control">
+                {/* <div className="form-control">
                   <label className="label">
                     <LoadCanvasTemplate />
                   </label>
@@ -128,11 +146,11 @@ const LoginPage = () => {
                   >
                     Validate
                   </button>
-                </div>
+                </div> */}
                 <div className="form-control mt-6">
-                  <Link href="/mycourse" className="btn btn-primary">
-                    <button>Login</button>
-                  </Link>
+                  <button className="btn btn-primary" type="submit">
+                    Login
+                  </button>
 
                   <div className="text-center mt-4">
                     <p className="text-gray-600">
