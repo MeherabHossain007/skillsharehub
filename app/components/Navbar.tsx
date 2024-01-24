@@ -16,20 +16,20 @@ function Navbar() {
         <div className="flex items-center gap-5">
           {/* 1  */}
           <div className="space-x-4">
-            <Link href="/" className="text-white">
+            <Link href="/" className="text-black">
               Sessions
             </Link>
-            <Link href="/" className="text-white">
+            <Link href="/" className="text-black">
               Become A Teacher
             </Link>
-            <Link href="/" className="text-white">
+            <Link href="/" className="text-black">
               My Classes
             </Link>
           </div>
           {/* 2  */}
           <div className="flex items-center gap-2">
-            <IoIosNotifications className="text-white  h-5" />
-            <FaCartShopping className="text-white  h-4" />
+            <IoIosNotifications className="text-black  h-5" />
+            <FaCartShopping className="text-black  h-4" />
           </div>
         </div>
 
