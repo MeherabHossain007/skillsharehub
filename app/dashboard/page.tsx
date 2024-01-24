@@ -1,14 +1,14 @@
 import React from "react";
 
 // import OnlineCourses from "./../Components/OnlineCourses/OnlineCourses";
-import warning from "../images/warning.png";
-import announcement from "../images/announce.png";
+import warning from "../../assets/images/warning.png";
+import announcement from "../../assets/images/announce.png";
 
-import Heading from './../../components/Heading';
-import Profile from './../../components/Profile';
-import YourCourse from './../../components/YourCourse';
-import OnlineCourses from './../../components/OnlineCourses';
-import Sessions from './../../components/Sessions';
+import Heading from '../../components/Heading';
+import Profile from '../../components/Profile';
+import YourCourse from '../../components/YourCourse';
+import OnlineCourses from '../../components/OnlineCourses';
+import Sessions from '../../components/Sessions';
 const myCoursePage = () => {
   return (
     <div className="md:w-[1800px] mx-auto ">

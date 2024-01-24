@@ -1,4 +1,4 @@
-import home from "../app/images/home.png";
+import home from "../assets/images/home.png";
 import Image from "next/image";
 
 const HomeHero = () => {

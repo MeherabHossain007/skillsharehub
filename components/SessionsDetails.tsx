@@ -1,4 +1,4 @@
-import group from "../app/images/Group 550.png";
+import group from "../assets/images/Group 550.png";
 
 // eslint-disable-next-line react/prop-types
 const SessionsDetails = ({ item }) => {
