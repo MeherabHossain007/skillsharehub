@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from "react";
 import balls from "../../public/balls.png";
 import Image from "next/image";
