@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import herologo from "../../public/herologo.png";
+import footerlogo from "../../public/footerlogo.png";
 import { IoIosNotifications } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 
@@ -10,7 +10,7 @@ function Navbar() {
   return (
     <div className="flex justify-between items-center p-4">
       <div>
-        <Image src={herologo} alt="logo" />
+        <Image src={footerlogo} alt="logo" />
       </div>
       <div className="flex items-center gap-5">
         <div className="flex items-center gap-5">

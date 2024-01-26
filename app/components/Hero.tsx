@@ -23,6 +23,7 @@ import asset11 from "../../public/Asset11.png";
 import herologo from "../../public/herologo.png";
 import { IoIosNotifications } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
+import balls2 from '../../public/balls2.png'
 
 import Footer from "./Footer";
 function Hero() {
@@ -446,7 +447,7 @@ function Hero() {
           <div className="relative flex justify-center items-center">
             <div className="absolute -z-10 ">
               <Image
-                src={ocbg1}
+                src={balls2}
                 alt="online course"
                 width={1350}
                 className="rounded-3xl"
