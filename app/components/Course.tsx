@@ -21,7 +21,12 @@ import dupdate from "../../public/session/dupdate.png";
 import mf from "../../public/session/mfriendly.svg";
 import inf from "../../public/session/infinity.png";
 import { IoPeople } from "react-icons/io5";
-import enroll from '../../public/enroll.png'
+import enroll from "../../public/enroll.png";
+import in1 from '../../public/instructors/in1.png'
+import star from '../../public/instructors/Stars.svg'
+import circle1 from '../../public/instructors/circle.svg'
+import circle2 from '../../public/instructors/Play circle filled.svg'
+import rating from '../../public/instructors/Rate review.svg'
 
 function Course() {
   return (
@@ -321,16 +326,22 @@ function Course() {
 
           <div>
             <p className="font-bold mt-10 mb-5">Description</p>
-            <div
-              tabIndex={0}
-              className="collapse collapse-arrow border "
-            >
+            <div tabIndex={0} className="collapse collapse-arrow border ">
               <div className="collapse-title text-md  font-medium ">
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br /> Aperiam adipisci, laboriosam culpa, tenetur <br /> quibusdam rerum ab odio, commodi officiis incidunt <br /> assumenda. Ad quia rerum laudantium alias quidem, <br /> ut nam nostrum quis corrupti suscipit delectus similique <br /> modi, quaerat sequi distinctio neque optio minima! <br /> Nihil corrupti aspernatur facilis pariatur quod, <br /> magnam voluptatum.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. <br />{" "}
+                Aperiam adipisci, laboriosam culpa, tenetur <br /> quibusdam
+                rerum ab odio, commodi officiis incidunt <br /> assumenda. Ad
+                quia rerum laudantium alias quidem, <br /> ut nam nostrum quis
+                corrupti suscipit delectus similique <br /> modi, quaerat sequi
+                distinctio neque optio minima! <br /> Nihil corrupti aspernatur
+                facilis pariatur quod, <br /> magnam voluptatum.
               </div>
               <div className="collapse-content font-medium">
                 <p className="text-justify">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident quisquam, <br /> necessitatibus sunt  voluptas optio iusto esse tenetur laborum est pariatur <br />  autem ipsa nihil, aperiam sit, maxime doloremque labore? Earum, iste.
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Provident quisquam, <br /> necessitatibus sunt voluptas optio
+                  iusto esse tenetur laborum est pariatur <br /> autem ipsa
+                  nihil, aperiam sit, maxime doloremque labore? Earum, iste.
                 </p>
               </div>
             </div>
@@ -340,22 +351,18 @@ function Course() {
         {/* 2 */}
         <div className="">
           <div className="rounded-xl shadow-xl  w-[400px] h-[850px] flex flex-col justify-evenly items-center -mt-72 bg-white">
-
-            <Image src={enroll} alt="enroll" className="w-[80%]"/>
+            <Image src={enroll} alt="enroll" className="w-[80%]" />
             {/* 1 */}
             <div className="flex gap-4">
-
-            <div className="w-44 h-8 bg-[#D9E3FF] flex items-center justify-center gap-2 rounded-lg   ">
-              <IoMdTimer className="text-[#5A66FF]" />
-              <p className="text-[#5A66FF]">10 days left</p>
+              <div className="w-44 h-8 bg-[#D9E3FF] flex items-center justify-center gap-2 rounded-lg   ">
+                <IoMdTimer className="text-[#5A66FF]" />
+                <p className="text-[#5A66FF]">10 days left</p>
+              </div>
+              <div className="w-44 h-8 bg-[#F1E2FC] flex items-center justify-center gap-2 rounded-lg   ">
+                <IoPeople className="text-[#A144FF]" />
+                <p className="text-[#A144FF]">70 Seats Left</p>
+              </div>
             </div>
-            <div className="w-44 h-8 bg-[#F1E2FC] flex items-center justify-center gap-2 rounded-lg   ">
-              <IoPeople className="text-[#A144FF]" />
-              <p className="text-[#A144FF]">70 Seats Left</p>
-            </div>
-
-            </div>
-         
 
             {/* 2 */}
 
@@ -373,7 +380,7 @@ function Course() {
             <div className="flex items-center gap-4">
               <div>
                 <button className="bg-[#5a66ff] px-24 py-3 font-semibold text-white rounded-3xl">
-                Add To Cart
+                  Add To Cart
                 </button>
               </div>
 
@@ -385,12 +392,10 @@ function Course() {
             {/* 3.1  */}
 
             <div>
-                <button className="bg-black px-36 py-3 font-semibold text-white rounded-3xl">
+              <button className="bg-black px-36 py-3 font-semibold text-white rounded-3xl">
                 Enroll Now
-                </button>
-              </div>
-
-
+              </button>
+            </div>
 
             {/* 4 */}
 
@@ -443,7 +448,62 @@ function Course() {
               </div>
             </div>
           </div>
-       
+
+          <div className="my-10">
+            <div className=" rounded-xl shadow-xl h-[400px] flex flex-col justify-center items-center">
+              <div className=" w-80 h-96">
+                {/* 1 */}
+                <div>
+                  <p className="font-semibold">Instructor</p>
+                </div>
+
+                {/* 2 */}
+
+                <div className="my-5 flex flex-col gap-5">
+                  {/* 1 */}
+                  <div>
+                    <p className="text-[#5A66FF] font-light">Jon Kantner</p>
+                    <p className="font-light">Developer and Lead Instructor</p>
+                  </div>
+
+                  {/* 2 */}
+                  <div className="flex items-center">
+                    {/* 1 */}
+                    <div className="avatar">
+                      <div className="w-24 rounded-full">
+                        <Image src={in1} alt="instructor" />
+                      </div>
+                    </div>
+                    {/* 2 */}
+
+                    <div className="space-y-1">
+                      <div className="flex items-center gap-2">
+                        <Image src={star} alt="star"/>
+                        <p>4.7 Instructor Rating</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Image src={circle1} alt="circle"/>
+                        <p>24356999 Students</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Image src={circle2} alt="circle"/>
+                        <p>5 Courses</p>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Image src={rating} alt="rating"/>
+                        <p>7445213 Reviews</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* 3 */}
+                  <div>
+                    <p className="font-light">I'm Jon Kantner, I'm a developer with a passion for teaching. I'm the lead instructor at the London App Brewery, London's leading Programming Bootcamp.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
