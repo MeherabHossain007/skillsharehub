@@ -9,10 +9,11 @@ import Profile from '../../components/Profile';
 import YourCourse from '../../components/YourCourse';
 import OnlineCourses from '../../components/OnlineCourses';
 import Sessions from '../../components/Sessions';
+import Navbar from "@/components/Navbar";
 const myCoursePage = () => {
   return (
     <div className="md:w-[1800px] mx-auto ">
-    
+      <Navbar></Navbar>
       <Heading title={"Read before you start"} picture={warning}></Heading>
       <Heading  title={"Announcement title"} picture={announcement}></Heading> 
       <Profile></Profile>
