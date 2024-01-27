@@ -6,7 +6,7 @@ import { IoIosNotifications } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 
 
-function Navbar() {
+function NavbarSadab() {
   return (
     <div className="flex justify-between items-center p-4">
       <div>
@@ -53,4 +53,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarSadab;

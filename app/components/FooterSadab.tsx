@@ -5,7 +5,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 
-function Footer() {
+function FooterSadab() {
   return (
     <div>
       <div>
@@ -58,4 +58,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default FooterSadab;

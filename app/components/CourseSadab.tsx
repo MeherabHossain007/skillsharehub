@@ -28,7 +28,7 @@ import circle1 from '../../public/instructors/circle.svg'
 import circle2 from '../../public/instructors/Play circle filled.svg'
 import rating from '../../public/instructors/Rate review.svg'
 
-function Course() {
+function CourseSadab() {
   return (
     <>
       {/* Hero section start  */}
@@ -512,4 +512,4 @@ function Course() {
   );
 }
 
-export default Course;
+export default CourseSadab;

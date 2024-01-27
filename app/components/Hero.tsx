@@ -25,7 +25,7 @@ import { IoIosNotifications } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
 import balls2 from '../../public/balls2.png'
 
-import Footer from "./Footer";
+import Footer from "./FooterSadab";
 function Hero() {
   const elements = [
     {
