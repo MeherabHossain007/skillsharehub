@@ -7,7 +7,6 @@ import world from "../../public/world.png";
 import ins from "../../public/instructors/ins.png";
 import { IoMdTimer } from "react-icons/io";
 
-
 import {
   FaTwitter,
   FaWhatsapp,
@@ -17,15 +16,35 @@ import {
 } from "react-icons/fa";
 import { url } from "inspector";
 import { MdFavoriteBorder } from "react-icons/md";
-import video from '../../public/session/video.svg'
-import code from '../../public/session/code.svg'
-import dfile from '../../public/session/dfile.svg'
-import dupdate from '../../public/session/dupdate.png'
-import mf from '../../public/session/mfriendly.svg'
-import inf from '../../public/session/infinity.png'
+import video from "../../public/session/video.svg";
+import code from "../../public/session/code.svg";
+import dfile from "../../public/session/dfile.svg";
+import dupdate from "../../public/session/dupdate.png";
+import mf from "../../public/session/mfriendly.svg";
+import inf from "../../public/session/infinity.png";
 
+function Instructor({ data }) {
+  
+  const {
+    id,
+    // eslint-disable-next-line react/prop-types
+    image,
+    // eslint-disable-next-line react/prop-types
+    rate,
+    // eslint-disable-next-line react/prop-types
+    price,
+    // eslint-disable-next-line react/prop-types
+    name,
+    // eslint-disable-next-line react/prop-types
+    expertise,
+    // eslint-disable-next-line react/prop-types, no-unused-vars
+    students,
+    // eslint-disable-next-line react/prop-types
+    about,
+  } = data;
 
-function Instructor() {
+  console.log(name);
+
   const elements = [
     {
       image: "/assets/ppro1.png",
@@ -72,8 +91,8 @@ function Instructor() {
             {/* 1 */}
             <div className="space-y-1">
               <p className="text-[#5A66FF]">Instructor</p>
-              <p className="text-3xl font-bold text-white">Dr. Jon Kantner</p>
-              <p className="text-gray-400">Developer and Lead Instructor</p>
+              <p className="text-3xl font-bold text-white">{name}</p>
+              <p className="text-gray-400">{expertise}</p>
             </div>
             {/* 2 */}
             <div className="space-y-1">
@@ -108,7 +127,7 @@ function Instructor() {
                 </div>
               </div>
 
-              <p className="text-white">1,144,346 students</p>
+              <p className="text-white">{students}</p>
 
               <div className="flex items-center gap-10">
                 <div className="flex items-center gap-2">
@@ -127,7 +146,7 @@ function Instructor() {
             <div className="border border-white w-96 h-52 bg-white flex justify-around items-center rounded-lg">
               <div>
                 <Image
-                  src={ins}
+                  src={image}
                   alt="ins"
                   height={150}
                   width={150}
@@ -226,15 +245,13 @@ function Instructor() {
             <div className="w-44 h-8 bg-[#D9E3FF] flex items-center justify-evenly rounded-lg   -ml-48">
               <IoMdTimer className="text-[#5A66FF]" />
               <p className="text-[#5A66FF]">Per Session Charge</p>
-
             </div>
-           
 
             {/* 2 */}
 
             <div className="flex items-center gap-4">
               <div>
-                <p className="text-4xl font-semibold"> $29.65 /hour</p>
+                <p className="text-4xl font-semibold"> ${price} /hour</p>
               </div>
               <div className="flex items-center gap-2">
                 <p className="text-gray-400 line-through">$99.99</p>
@@ -259,63 +276,53 @@ function Instructor() {
 
             <div>
               <div className="-ml-14 my-1">
-
-              <p className="font-semibold text-2xl">This Session includes:</p>
+                <p className="font-semibold text-2xl">This Session includes:</p>
               </div>
               <div className="space-y-2">
+                {/* 1 */}
 
-              {/* 1 */}
+                <div className="flex items-center gap-4">
+                  <Image src={video} alt="video" />
+                  <p className="font-extralight">62 hours on-demand video</p>
+                </div>
 
-              <div className="flex items-center gap-4">
+                {/* 2 */}
 
-                <Image src={video} alt="video"/>
-                <p className="font-extralight">62 hours on-demand video</p>
+                <div className="flex items-center gap-4">
+                  <Image src={code} alt="code" />
+                  <p className="font-extralight">7 coding exercises</p>
+                </div>
 
+                {/* 3 */}
+
+                <div className="flex items-center gap-4">
+                  <Image src={dfile} alt="code" />
+                  <p className="font-extralight">66 articles</p>
+                </div>
+
+                {/* 4 */}
+
+                <div className="flex items-center gap-4">
+                  <Image src={dupdate} alt="code" />
+                  <p className="font-extralight">118 downloadable resources</p>
+                </div>
+
+                {/* 5  */}
+
+                <div className="flex items-center gap-4">
+                  <Image src={mf} alt="code" />
+                  <p className="font-extralight">Access on mobile and TV</p>
+                </div>
+
+                {/* 6 */}
+
+                <div className="flex items-center gap-4">
+                  <Image src={inf} alt="code" />
+                  <p className="font-extralight">Full lifetime access</p>
+                </div>
               </div>
-
-              {/* 2 */}
-
-              <div className="flex items-center gap-4">
-                <Image src={code} alt="code"/>
-                <p className="font-extralight">7 coding exercises</p>
-              </div>
-
-              {/* 3 */}
-
-              <div className="flex items-center gap-4">
-                <Image src={dfile} alt="code"/>
-                <p className="font-extralight">66 articles</p>
-              </div>
-
-              {/* 4 */}
-
-              <div className="flex items-center gap-4">
-                <Image src={dupdate} alt="code"/>
-                <p className="font-extralight">118 downloadable resources</p>
-              </div>
-
-              {/* 5  */}
-
-              <div className="flex items-center gap-4">
-                <Image src={mf} alt="code"/>
-                <p className="font-extralight">Access on mobile and TV</p>
-              </div>
-
-              {/* 6 */}
-
-              
-              <div className="flex items-center gap-4">
-                <Image src={inf} alt="code"/>
-                <p className="font-extralight">Full lifetime access</p>
-              </div>
-
-              </div>
-
             </div>
           </div>
-
-  
-
         </div>
       </div>
       {/* main body end */}
