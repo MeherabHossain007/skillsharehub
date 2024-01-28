@@ -18,7 +18,7 @@ export default function Session() {
 
   return videoCall ? (
     <div style={{ display: "flex", width: "100%", height: "100%" }}>
-      <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
+      {/* <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} /> */}
       <Link href={"https://meet.google.com/ygu-qtgz-zog"}>Join Now</Link>
     </div>
   ) : (
