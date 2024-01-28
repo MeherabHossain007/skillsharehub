@@ -1,20 +1,24 @@
 "use client"; // This is a client component
 
 import { useState, useEffect } from "react";
-import InstructorFilterCard from './InstructorFilterCard';
+import InstructorFilterCard from "./InstructorFilterCard";
+import { supabase } from "@/supabase/client";
 
+const InstructorFilter = ({ data }) => {
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
 
-
-
-const InstructorFilter = ({data}) => {
-  // const [data, setData] = useState([]);
-  // useEffect(() => {
-  //   fetch("https://raw.githubusercontent.com/Yousufjoy/fydpData1/main/data5.json")
-  //     .then((res) => res.json())
-  //     .then((data) => setData(data.cardData));
-  // }, []);
-
-
+  const handleSearch = async () => {
+    const { data, error } = await supabase
+      .from("author")
+      .select("*")
+      .ilike("expertise", `%${searchTerm}%`);
+    if (error) {
+      console.error("Error searching:", error);
+    } else {
+      setSearchResults(data);
+    }
+  };
 
   const [rangeValue, setRangeValue] = useState(0);
   const handleRangeChange = (event) => {
@@ -42,14 +46,19 @@ const InstructorFilter = ({data}) => {
       <div className="md:flex ">
         {/* Left Div */}
         <div className="md:w-[20%]  md:ml-[0px]  ml-[40px]">
-          <div className="flex">
+          <div className="flex gap-3">
             <label className="form-control w-full max-w-xs">
               <input
-                type="text"
-                placeholder="Search here"
                 className="input input-bordered w-full max-w-xs"
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search..."
               />
             </label>
+            <button className="btn btn-primary" onClick={handleSearch}>
+              Search
+            </button>
           </div>
           <div className=" mt-[50px] md:w-[320px] rounded-lg bg-white shadow-md  mr-[50px]">
             <h2 className=" text-xl font-bold pt-[20px] my-4"> Price </h2>
@@ -70,16 +79,20 @@ const InstructorFilter = ({data}) => {
               <p className="py-4 px-4 text-lg text-gray-400">
                 Max: <span className="font-bold ">100$</span>
               </p>
-              <button className="pr-[40px]  text-[#5A66FF] font-semibold">Apply</button>
+              <button className="pr-[40px]  text-[#5A66FF] font-semibold">
+                Apply
+              </button>
             </div>
-
-
-            
           </div>
           <div className=" mt-[50px] md:w-[320px] rounded-lg bg-white shadow-md  mr-[50px]">
-            <h2 className=" text-xl font-bold pt-[20px] my-4"> Video duration </h2>
+            <h2 className=" text-xl font-bold pt-[20px] my-4">
+              {" "}
+              Video duration{" "}
+            </h2>
             <div className="flex  justify-between">
-              <p className="py-4 px-4 text-lg text-gray-400">{videoValue} hrs</p>
+              <p className="py-4 px-4 text-lg text-gray-400">
+                {videoValue} hrs
+              </p>
               <p className="pr-[50px] text-lg text-gray-400 ">150 hrs</p>
             </div>
             {/* **** */}
@@ -95,9 +108,10 @@ const InstructorFilter = ({data}) => {
               <p className="py-4 px-4 text-lg text-gray-400">
                 Max: <span className="font-bold ">150 hrs</span>
               </p>
-              <button className="pr-[40px]  text-[#5A66FF] font-semibold">Apply</button>
+              <button className="pr-[40px]  text-[#5A66FF] font-semibold">
+                Apply
+              </button>
             </div>
-     
           </div>
 
           {/* FILTER OPTIONS */}
@@ -151,7 +165,6 @@ const InstructorFilter = ({data}) => {
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">Level</div>
               <div className="collapse-content">
-              
                 <p>hello</p>
               </div>
             </div>
@@ -161,7 +174,6 @@ const InstructorFilter = ({data}) => {
               <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">Feature</div>
               <div className="collapse-content">
-               
                 <p>hello</p>
               </div>
             </div>
@@ -173,7 +185,6 @@ const InstructorFilter = ({data}) => {
                 Languages
               </div>
               <div className="collapse-content">
-                
                 <p>hello</p>
               </div>
             </div>
@@ -184,10 +195,21 @@ const InstructorFilter = ({data}) => {
           <div className="grid md:grid-cols-3 gap-8 ml-[20px] md:ml-[0px] md:mt-[0px] mt-[50px]">
             {
               // eslint-disable-next-line react/jsx-key
-              data.map((item) => (
-                // eslint-disable-next-line react/jsx-key
-                <InstructorFilterCard data={item} key={item.id}></InstructorFilterCard>
-              ))
+              searchResults.length > 0
+                ? searchResults.map((item) => (
+                    // eslint-disable-next-line react/jsx-key
+                    <InstructorFilterCard
+                      data={item}
+                      key={item.id}
+                    ></InstructorFilterCard>
+                  ))
+                : data.map((item) => (
+                    // eslint-disable-next-line react/jsx-key
+                    <InstructorFilterCard
+                      data={item}
+                      key={item.id}
+                    ></InstructorFilterCard>
+                  ))
             }
           </div>
         </div>
