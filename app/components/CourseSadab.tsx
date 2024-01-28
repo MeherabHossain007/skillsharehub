@@ -203,7 +203,7 @@ function CourseSadab({ id }) {
                           <div className="flex justify-between items-center" key={video.title}>
                             <div className="flex items-center gap-2">
                               <div className="flex flex-col gap-4">
-                                <p>{video.title}</p>
+                                <a href={`${video.url}`}>{video.title}</a>
                               </div>
                             </div>
                           </div>
