@@ -24,7 +24,6 @@ import mf from "../../public/session/mfriendly.svg";
 import inf from "../../public/session/infinity.png";
 
 function Instructor({ data }) {
-  
   const {
     id,
     // eslint-disable-next-line react/prop-types
@@ -262,7 +261,10 @@ function Instructor({ data }) {
             {/* 3 */}
             <div className="flex items-center gap-4">
               <div>
-                <button className="bg-[#5a66ff] px-20 py-3 font-semibold text-white rounded-3xl">
+                <button
+                  className="bg-[#5a66ff] px-20 py-3 font-semibold text-white rounded-3xl"
+                  onClick={() => (window.location.href = "/session")}
+                >
                   Join Session Now
                 </button>
               </div>

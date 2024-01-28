@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import AgoraUIKit from "agora-react-uikit";
+import Link from "next/link";
 
 export default function Session() {
   const [videoCall, setVideoCall] = useState(true);
@@ -18,6 +19,7 @@ export default function Session() {
   return videoCall ? (
     <div style={{ display: "flex", width: "100%", height: "100%" }}>
       <AgoraUIKit rtcProps={rtcProps} callbacks={callbacks} />
+      <Link href={"https://meet.google.com/ygu-qtgz-zog"}>Join Now</Link>
     </div>
   ) : (
     <h3 onClick={() => setVideoCall(true)}>Join</h3>
