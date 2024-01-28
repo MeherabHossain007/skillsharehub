@@ -1,17 +1,16 @@
-import React from "react";
-import Navbar from "../components/NavbarSadab";
-import Footer from "../components/FooterSadab";
-import Instructor from "../components/Instructor";
+import InstructorHero from "../../components/InstructorHero";
+import InstructorFilter from '../../components/InstructorFilter';
+import Navbar from "@/components/Navbar";
+import NavbarSadab from "../components/NavbarSadab";
 
-function page() {
+const InstructorPage = () => {
   return (
-    <>
-      <Navbar />
-      <Instructor />
-
-      <Footer />
-    </>
+    <div className=" md:w-[1800px] mx-auto">
+      <NavbarSadab></NavbarSadab>
+      <InstructorHero></InstructorHero>
+      <InstructorFilter></InstructorFilter>
+    </div>
   );
-}
+};
 
-export default page;
+export default InstructorPage;

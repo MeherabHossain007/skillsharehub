@@ -4,9 +4,14 @@ import React from "react";
 import footerlogo from "../../public/footerlogo.png";
 import { IoIosNotifications } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
-
+import { supabase } from "@/supabase/client";
 
 function NavbarSadab() {
+  const handlellogout = async () => {
+    localStorage.removeItem("token");
+    let { error } = await supabase.auth.signOut();
+    window.location.href = "/login";
+  };
   return (
     <div className="flex justify-between items-center p-4">
       <div>
@@ -16,13 +21,13 @@ function NavbarSadab() {
         <div className="flex items-center gap-5">
           {/* 1  */}
           <div className="space-x-4">
-            <Link href="/" className="text-black">
+            <Link href="/instruuctor" className="text-black">
               Sessions
             </Link>
             <Link href="/" className="text-black">
               Become A Teacher
             </Link>
-            <Link href="/" className="text-black">
+            <Link href="/dashboard" className="text-black">
               My Classes
             </Link>
           </div>
@@ -45,7 +50,7 @@ function NavbarSadab() {
 
         <div>
           <button className="bg-[#5a66ff] px-4 py-2 text-white rounded-3xl">
-            Get Premium
+            Log out
           </button>
         </div>
       </div>
