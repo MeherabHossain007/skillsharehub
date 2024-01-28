@@ -357,37 +357,35 @@ function Hero({ course }) {
           <div className="container mx-auto my-10">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
               {course.map((element, i) => (
-                <div
-                  key={i}
-                  className="card w-96 bg-base-100 shadow-xl"
-                  onClick={() => (window.location.href = "/course")}
-                >
-                  <figure>
-                    <Image
-                      src={element.image}
-                      alt="Shoes"
-                      width={400}
-                      height={400}
-                    />
-                  </figure>
-                  <div className="card-body">
-                    <div className="flex justify-between">
-                      <h2 className="card-title text-[#0647EE]">
-                        {element.tag}
-                      </h2>
-                      <h2 className="card-title text-[#0647EE]">
-                        {element.ctime}
-                      </h2>
-                    </div>
-                    <p className="font-bold">{element.title}</p>
-                    <div className="card-actions items-center justify-between mt-5">
-                      <h2 className="card-title text-[#797878]">
-                        {element.author}
-                      </h2>
-                      <FaRegBookmark className="cursor-pointer" />
+                <Link href={`home2/${element.id}`} key={element.id}>
+                  <div className="card w-96 bg-base-100 shadow-xl">
+                    <figure>
+                      <Image
+                        src={element.image}
+                        alt="Shoes"
+                        width={400}
+                        height={400}
+                      />
+                    </figure>
+                    <div className="card-body">
+                      <div className="flex justify-between">
+                        <h2 className="card-title text-[#0647EE]">
+                          {element.tag}
+                        </h2>
+                        <h2 className="card-title text-[#0647EE]">
+                          {element.ctime}
+                        </h2>
+                      </div>
+                      <p className="font-bold">{element.title}</p>
+                      <div className="card-actions items-center justify-between mt-5">
+                        <h2 className="card-title text-[#797878]">
+                          {element.author}
+                        </h2>
+                        <FaRegBookmark className="cursor-pointer" />
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
