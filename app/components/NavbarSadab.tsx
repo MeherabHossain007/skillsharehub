@@ -21,7 +21,7 @@ function NavbarSadab() {
         <div className="flex items-center gap-5">
           {/* 1  */}
           <div className="space-x-4">
-            <Link href="/instruuctor" className="text-black">
+            <Link href="/instructor" className="text-black">
               Sessions
             </Link>
             <Link href="/" className="text-black">
