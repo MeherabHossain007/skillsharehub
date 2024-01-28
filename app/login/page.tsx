@@ -8,11 +8,11 @@ import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useRef, useState } from "react";
 
 import Swal from "sweetalert2";
-// import {
-//   loadCaptchaEnginge,
-//   validateCaptcha,
-//   LoadCanvasTemplate,
-// } from "react-simple-captcha";
+import {
+  loadCaptchaEnginge,
+  validateCaptcha,
+  LoadCanvasTemplate,
+} from "react-simple-captcha";
 
 const LoginPage = (res: NextApiResponse) => {
   const [disabled, setDisabled] = useState(true);
@@ -38,52 +38,52 @@ const LoginPage = (res: NextApiResponse) => {
     }
   };
 
-  // useEffect(() => {
-  //   loadCaptchaEnginge(6);
-  // }, []);
+  useEffect(() => {
+    loadCaptchaEnginge(6);
+  }, []);
 
-  // const captchaRef = useRef(null);
+  const captchaRef = useRef(null);
 
-  // const handleValidateCaptcha = () => {
-  //   const value = captchaRef.current.value;
+  const handleValidateCaptcha = () => {
+    const value = captchaRef.current.value;
 
-  //   if (validateCaptcha(value)) {
-  //     Swal.fire({
-  //       position: "top",
-  //       icon: "success",
-  //       title: "Captcha Matched",
-  //       showConfirmButton: false,
-  //       timer: 1500,
-  //     });
-  //     setDisabled(false);
-  //   } else {
-  //     Swal.fire({
-  //       icon: "error",
-  //       title: "Captcha did not Match!!",
-  //       text: "Something went wrong!",
-  //       footer: '<a href="#">Give Correct Captcha.</a>',
-  //     });
-  //     setDisabled(true);
-  //   }
-  // };
+    if (validateCaptcha(value)) {
+      Swal.fire({
+        position: "top",
+        icon: "success",
+        title: "Captcha Matched",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setDisabled(false);
+    } else {
+      Swal.fire({
+        icon: "error",
+        title: "Captcha did not Match!!",
+        text: "Something went wrong!",
+        footer: '<a href="#">Give Correct Captcha.</a>',
+      });
+      setDisabled(true);
+    }
+  };
 
   // Move captcha validation here, after defining value
-  // const captchaValue = captchaRef.current?.value || "";
+  const captchaValue = captchaRef.current?.value || "";
 
-  // if (!validateCaptcha(captchaValue)) {
-  //   // If captcha validation fails, show an error
-  //   Swal.fire({
-  //     icon: "error",
-  //     title: "Captcha did not Match!!",
-  //     text: "Something went wrong!",
-  //     footer: '<a href="#">Give Correct Captcha.</a>',
-  //   });
-  //   setDisabled(true);
-  //   return (
-  //     // Return some JSX here if needed
-  //     <div>Error in captcha validation</div>
-  //   );
-  // }
+  if (!validateCaptcha(captchaValue)) {
+    // If captcha validation fails, show an error
+    Swal.fire({
+      icon: "error",
+      title: "Captcha did not Match!!",
+      text: "Something went wrong!",
+      footer: '<a href="#">Give Correct Captcha.</a>',
+    });
+    setDisabled(true);
+    return (
+      // Return some JSX here if needed
+      <div>Error in captcha validation</div>
+    );
+  }
   return (
     <div>
       <div className="hero min-h-screen bg-base-200">
@@ -127,7 +127,7 @@ const LoginPage = (res: NextApiResponse) => {
                     </a>
                   </label>
                 </div>
-                {/* <div className="form-control">
+                <div className="form-control">
                   <label className="label">
                     <LoadCanvasTemplate />
                   </label>
@@ -146,7 +146,7 @@ const LoginPage = (res: NextApiResponse) => {
                   >
                     Validate
                   </button>
-                </div> */}
+                </div>
                 <div className="form-control mt-6">
                   <button className="btn btn-primary" type="submit">
                     Login
