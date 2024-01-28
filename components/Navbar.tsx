@@ -2,11 +2,12 @@
 import { supabase } from "@/supabase/client";
 
 const Navbar = () => {
-
   const handlellogout = async () => {
-    localStorage.removeItem("token");
     let { error } = await supabase.auth.signOut();
     window.location.href = "/login";
+    if (error) {
+      alert(error.message);
+    }
   };
 
   return (
@@ -63,10 +64,17 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-[#5A66FF] text-white" onClick={handlellogout} role="button">
-          Log Out
+        <a className="btn bg-[#5A66FF] text-white" href="/login" role="button">
+          Get Started
         </a>
       </div>
+      <a
+        className="btn bg-[#5A66FF] text-white"
+        onClick={handlellogout}
+        role="button"
+      >
+        Log Out
+      </a>
     </div>
   );
 };

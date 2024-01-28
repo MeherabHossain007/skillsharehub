@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -8,7 +9,6 @@ import { supabase } from "@/supabase/client";
 
 function NavbarSadab() {
   const handlellogout = async () => {
-    localStorage.removeItem("token");
     let { error } = await supabase.auth.signOut();
     window.location.href = "/login";
   };
@@ -49,7 +49,10 @@ function NavbarSadab() {
         {/* 4  */}
 
         <div>
-          <button className="bg-[#5a66ff] px-4 py-2 text-white rounded-3xl">
+          <button
+            className="bg-[#5a66ff] px-4 py-2 text-white rounded-3xl"
+            onClick={handlellogout}
+          >
             Log out
           </button>
         </div>

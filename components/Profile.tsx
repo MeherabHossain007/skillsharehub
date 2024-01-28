@@ -10,7 +10,7 @@ import weather from "../assets/images/weather.png"
 import moon from "../assets/images/moon.png"
 import { useEffect, useState } from "react";
 
-const Profile = () => {
+const Profile = ({name,achivement,certificate,credit}) => {
   const [currentDateTime, setCurrentDateTime] = useState(new Date());
 
   useEffect(() => {
@@ -24,7 +24,7 @@ const Profile = () => {
   return (
     <div className="mt-7 md:ml-[20px]">
       <h1 className="text-black font-lato text-25 font-bold leading-26 text-[25px] pl-[0] text-center px-[10px] md:text-start ">
-        Welcome Back <span className="text-[#5A66FF]"> Samia Haque</span>, Ready
+        Welcome Back <span className="text-[#5A66FF]">{name}</span>, Ready
         For Your Lesson?
       </h1>
 
@@ -35,7 +35,7 @@ const Profile = () => {
           </div>
           <div className="py-[50px] ">
             <h3 className="text-[24px] font-medium">
-              Samia Haque
+              {name}
               <span className="text-[18px] border rounded-lg py-[3px] px-[10px] bg-[#5A66FF] text-white">
                 PRO
               </span>
@@ -44,18 +44,18 @@ const Profile = () => {
             <div className="flex  py-4 justify-between md:w-[300px]">
               <span className="flex  ">
                 <Image src={icon1} alt="" />
-                <span className="pt-[5px] px-[10px] font-bold "> 12</span>
+                <span className="pt-[5px] px-[10px] font-bold ">{achivement}</span>
               </span>
               <span>
                 <span className="flex">
                   <Image src={icon2} alt="" />
-                  <span className="pt-[5px] px-[10px] font-bold "> 05</span>
+                  <span className="pt-[5px] px-[10px] font-bold ">{certificate}</span>
                 </span>
               </span>
               <span>
                 <span className="flex">
                   <Image src={icon3} alt="" />
-                  <span className="pt-[5px] px-[10px] font-bold "> 57</span>
+                  <span className="pt-[5px] px-[10px] font-bold ">{credit}</span>
                 </span>
               </span>
             </div>
