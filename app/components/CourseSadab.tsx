@@ -1,4 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
+'use client';
 import Image from "next/image";
 import React from "react";
 import bwarn from "../../public/bwarn.png";
@@ -22,11 +23,11 @@ import mf from "../../public/session/mfriendly.svg";
 import inf from "../../public/session/infinity.png";
 import { IoPeople } from "react-icons/io5";
 import enroll from "../../public/enroll.png";
-import in1 from '../../public/instructors/in1.png'
-import star from '../../public/instructors/Stars.svg'
-import circle1 from '../../public/instructors/circle.svg'
-import circle2 from '../../public/instructors/Play circle filled.svg'
-import rating from '../../public/instructors/Rate review.svg'
+import in1 from "../../public/instructors/in1.png";
+import star from "../../public/instructors/Stars.svg";
+import circle1 from "../../public/instructors/circle.svg";
+import circle2 from "../../public/instructors/Play circle filled.svg";
+import rating from "../../public/instructors/Rate review.svg";
 
 function CourseSadab() {
   return (
@@ -392,7 +393,10 @@ function CourseSadab() {
             {/* 3.1  */}
 
             <div>
-              <button className="bg-black px-36 py-3 font-semibold text-white rounded-3xl">
+              <button
+                className="bg-black px-36 py-3 font-semibold text-white rounded-3xl"
+                onClick={() => (window.location.href = "/checkout")}
+              >
                 Enroll Now
               </button>
             </div>
@@ -478,19 +482,19 @@ function CourseSadab() {
 
                     <div className="space-y-1">
                       <div className="flex items-center gap-2">
-                        <Image src={star} alt="star"/>
+                        <Image src={star} alt="star" />
                         <p>4.7 Instructor Rating</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Image src={circle1} alt="circle"/>
+                        <Image src={circle1} alt="circle" />
                         <p>24356999 Students</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Image src={circle2} alt="circle"/>
+                        <Image src={circle2} alt="circle" />
                         <p>5 Courses</p>
                       </div>
                       <div className="flex items-center gap-2">
-                        <Image src={rating} alt="rating"/>
+                        <Image src={rating} alt="rating" />
                         <p>7445213 Reviews</p>
                       </div>
                     </div>
@@ -498,7 +502,11 @@ function CourseSadab() {
 
                   {/* 3 */}
                   <div>
-                    <p className="font-light">I'm Jon Kantner, I'm a developer with a passion for teaching. I'm the lead instructor at the London App Brewery, London's leading Programming Bootcamp.</p>
+                    <p className="font-light">
+                      I'm Jon Kantner, I'm a developer with a passion for
+                      teaching. I'm the lead instructor at the London App
+                      Brewery, London's leading Programming Bootcamp.
+                    </p>
                   </div>
                 </div>
               </div>
