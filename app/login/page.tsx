@@ -38,7 +38,7 @@ const LoginPage = (res: NextApiResponse) => {
     captcha.current?.resetCaptcha();
     if (data.user != null && captchaToken) {
       console.log(data.user);
-      router.push(`http://localhost:3000/auth/callback`);
+      router.push(`http://localhost:3000/mfa`);
     }
   };
 
