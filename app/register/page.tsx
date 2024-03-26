@@ -1,8 +1,11 @@
 "use client";
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 import Link from "next/link";
+import { useState } from "react";
+import PasswordStrengthBar from "react-password-strength-bar";
 
 const RegisterPage = () => {
+  const [password, setPassword] = useState("");
   const handleSignup = async (e: {
     preventDefault: () => void;
     target: any;
@@ -60,16 +63,18 @@ const RegisterPage = () => {
                     name="password"
                     id="password"
                     placeholder="password"
+                    onChange={(e) => setPassword(e.target.value)}
                     className="input input-bordered"
                     required
                   />
+                  <PasswordStrengthBar className="mt-2" password={password} />
                   <label className="label">
                     <a href="#" className="label-text-alt link link-hover">
                       Forgot password?
                     </a>
                   </label>
                 </div>
-                <div className="form-control mt-6">
+                <div className="form-control mt-3">
                   <button className="btn btn-primary">Register</button>
                   <div className="text-center mt-4">
                     <p className="text-gray-600">

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import InstructorFilterCard from "./InstructorFilterCard";
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 
 const InstructorFilter = ({ data }) => {
   const [searchTerm, setSearchTerm] = useState("");

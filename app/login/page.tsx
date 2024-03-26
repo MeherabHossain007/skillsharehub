@@ -1,5 +1,5 @@
 "use client"; // This is a client component
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 import { url } from "inspector";
 import { NextApiResponse } from "next";
 import { redirect } from "next/dist/server/api-utils";
@@ -7,13 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React, { useContext, useEffect, useRef, useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-
-import Swal from "sweetalert2";
-import {
-  loadCaptchaEnginge,
-  validateCaptcha,
-  LoadCanvasTemplate,
-} from "react-simple-captcha";
+import PasswordStrengthBar from "react-password-strength-bar";
 
 const LoginPage = (res: NextApiResponse) => {
   const [disabled, setDisabled] = useState(true);
@@ -31,19 +25,10 @@ const LoginPage = (res: NextApiResponse) => {
     const email = form.email.value;
     const password = form.password.value;
 
-    let { data } = await supabase.auth.signInWithPassword({
+    let { data, error } = await supabase.auth.signInWithPassword({
       email: email,
       password: password,
       options: { captchaToken },
-    });
-
-    const { error } = await supabase.auth.signInWithOtp({
-      email: email,
-      options: {
-        // set this to false if you do not want the user to be automatically signed up
-        shouldCreateUser: false,
-        emailRedirectTo: "http://localhost:3000/dashboard",
-      },
     });
 
     if (error) {
@@ -53,7 +38,7 @@ const LoginPage = (res: NextApiResponse) => {
     captcha.current?.resetCaptcha();
     if (data.user != null && captchaToken) {
       console.log(data.user);
-      router.push(`http://localhost:3000/mfa`);
+      router.push(`http://localhost:3000/auth/callback`);
     }
   };
 
@@ -100,7 +85,7 @@ const LoginPage = (res: NextApiResponse) => {
                     </a>
                   </label>
                 </div>
-                <div className="form-control mt-6">
+                <div className="form-control mt-4">
                   <button className="btn btn-primary" type="submit">
                     Login
                   </button>

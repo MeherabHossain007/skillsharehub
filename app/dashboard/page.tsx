@@ -10,10 +10,10 @@ import YourCourse from "../../components/YourCourse";
 import OnlineCourses from "../../components/OnlineCourses";
 import Sessions from "../../components/Sessions";
 import Navbar from "@/components/Navbar";
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 
 interface User {
-  id:number;
+  id: number;
   uid: string;
   email: string;
   name: string;
@@ -53,17 +53,15 @@ const MyCoursePage = () => {
       <Navbar></Navbar>
       <Heading title={"Read before you start"} picture={warning}></Heading>
       <Heading title={"Announcement title"} picture={announcement}></Heading>
-      {
-        profile.map((user: User) => (
-          <Profile
-            key={user.id}
-            name={user.name}
-            achivement={user.achivements}
-            certificate={user.certificates}
-            credit={user.credit}
-          ></Profile>
-        ))
-      }
+      {profile.map((user: User) => (
+        <Profile
+          key={user.id}
+          name={user.name}
+          achivement={user.achivements}
+          certificate={user.certificates}
+          credit={user.credit}
+        ></Profile>
+      ))}
       <YourCourse></YourCourse>
       <OnlineCourses></OnlineCourses>
       <Sessions></Sessions>

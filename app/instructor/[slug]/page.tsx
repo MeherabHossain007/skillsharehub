@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../../components/NavbarSadab";
 import Footer from "../../components/FooterSadab";
 import Instructor from "../../components/Instructor";
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 
 function Page({ params }: { params: { slug: any } }) {
   const [data, setData] = useState([]);

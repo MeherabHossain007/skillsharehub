@@ -1,13 +1,12 @@
-'use client';
+"use client";
 import InstructorHero from "../../components/InstructorHero";
 import InstructorFilter from "../../components/InstructorFilter";
 import Navbar from "@/components/Navbar";
 import NavbarSadab from "../components/NavbarSadab";
 import { useEffect, useState } from "react";
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 
 const InstructorPage = () => {
-
   const [author, setAuthor] = useState([]);
 
   useEffect(() => {

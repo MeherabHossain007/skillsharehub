@@ -1,14 +1,10 @@
 "use client";
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const MFALogin = () => {
-  const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [otp, setOtp] = useState("");
-  const [stage, setStage] = useState("enterPhone"); // Initial stage
+  const [email, setEmail] = useState(""); // Initial stage
   const [error, setError] = useState(null);
   const [resendDisabled, setResendDisabled] = useState(false);
 
@@ -19,18 +15,13 @@ const MFALogin = () => {
     setError(null); // Clear previous errors on input change
   };
 
-  const handleOtpChange = (event) => {
-    setOtp(event.target.value);
-    setError(null); // Clear previous errors on input change
-  };
-
   const sendOtp = async () => {
     try {
-      const { data, error } = await supabase.auth.signInWithOtp({
+      const { error } = await supabase.auth.signInWithOtp({
         email: email,
         options: {
-          // set this to false if you do not want the user to be automatically signed up
           shouldCreateUser: false,
+          emailRedirectTo: "http://localhost:3000/auth/callback",
         },
       });
 
@@ -38,32 +29,7 @@ const MFALogin = () => {
         throw error;
       }
 
-      setStage("enterOtp");
       startResendTimer();
-    } catch (err) {
-      setError(err.message);
-    }
-  };
-
-  const verifyOtp = async () => {
-    try {
-      const {
-        data: { session },
-        error,
-      } = await supabase.auth.verifyOtp({
-        email,
-        token: otp,
-        type: "email",
-      });
-
-      if (error) {
-        throw error;
-      }
-
-      // Handle successful login (e.g., redirect to protected area)
-      if (session) {
-        router.push("http://localhost:3000/auth/callback");
-      }
     } catch (err) {
       setError(err.message);
     }
@@ -106,12 +72,29 @@ const MFALogin = () => {
               We have sent an email with your login URL. Check your inbox and
               follow the instructions.
             </p>
-            <a
-              href="https://mail.google.com/"
-              className="inline-flex items-center px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white rounded-md mt-4"
-            >
-              <span className="mr-2">Find Login URL</span>
-            </a>
+            <div className="mb-4">
+              <label
+                htmlFor="phone"
+                className="block text-lg font-bold mt-3 mb-2"
+              >
+                Enter Your Email
+              </label>
+              <input
+                type="tel"
+                id="phone"
+                placeholder="Enter your phone number"
+                value={email}
+                onChange={handleEmailChange}
+                className="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 rounded-md w-full sm:text-sm px-3 py-2 border border-gray-300"
+              />
+              <button
+                className="btn bg-blue-500 text-white border-0 mt-5 hover:bg-blue-800 "
+                onClick={sendOtp}
+              >
+                Send Login Link
+              </button>
+              <span>{error}</span>
+            </div>
           </div>
         </div>
       </div>

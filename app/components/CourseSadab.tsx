@@ -28,7 +28,7 @@ import star from "../../public/instructors/Stars.svg";
 import circle1 from "../../public/instructors/circle.svg";
 import circle2 from "../../public/instructors/Play circle filled.svg";
 import rating from "../../public/instructors/Rate review.svg";
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 
 function CourseSadab({ id }) {
   const [course, setCourse] = React.useState([]);
@@ -200,7 +200,10 @@ function CourseSadab({ id }) {
                       <div className="collapse-content space-y-2">
                         {/* 1  */}
                         {course.cvideos.map((video) => (
-                          <div className="flex justify-between items-center" key={video.title}>
+                          <div
+                            className="flex justify-between items-center"
+                            key={video.title}
+                          >
                             <div className="flex items-center gap-2">
                               <div className="flex flex-col gap-4">
                                 <a href={`${video.url}`}>{video.title}</a>
@@ -262,7 +265,7 @@ function CourseSadab({ id }) {
             {/* 2 */}
             <div className="">
               <div className="rounded-xl shadow-xl  w-[400px] h-[850px] flex flex-col justify-evenly items-center -mt-72 bg-white">
-                <img src={course.image} alt="enroll" className="w-[80%]"/>
+                <img src={course.image} alt="enroll" className="w-[80%]" />
                 {/* 1 */}
                 <div className="flex gap-4">
                   <div className="w-44 h-8 bg-[#D9E3FF] flex items-center justify-center gap-2 rounded-lg   ">
@@ -279,7 +282,10 @@ function CourseSadab({ id }) {
 
                 <div className="flex items-center gap-4">
                   <div>
-                    <p className="text-4xl font-semibold"> ${course.price}.00</p>
+                    <p className="text-4xl font-semibold">
+                      {" "}
+                      ${course.price}.00
+                    </p>
                   </div>
                   <div className="flex items-center gap-2">
                     <p className="text-gray-400 line-through">$99.99</p>

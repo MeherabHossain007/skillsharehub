@@ -5,7 +5,7 @@ import React from "react";
 import footerlogo from "../../public/footerlogo.png";
 import { IoIosNotifications } from "react-icons/io";
 import { FaCartShopping } from "react-icons/fa6";
-import { supabase } from "@/supabase/client";
+import { supabase } from "@/utils/supabase/client";
 
 function NavbarSadab() {
   const handlellogout = async () => {
@@ -49,7 +49,6 @@ function NavbarSadab() {
         {/* 4  */}
 
         <div>
-
           {/* <button
             className="bg-[#5a66ff] px-4 py-2 text-white rounded-3xl"
             onClick={handlellogout}
