@@ -1,16 +1,11 @@
 "use client"; // This is a client component
 import { supabase } from "@/utils/supabase/client";
-import { url } from "inspector";
-import { NextApiResponse } from "next";
-import { redirect } from "next/dist/server/api-utils";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
-import PasswordStrengthBar from "react-password-strength-bar";
 
-const LoginPage = (res: NextApiResponse) => {
-  const [disabled, setDisabled] = useState(true);
+const LoginPage = () => {
   const [captchaToken, setCaptchaToken] = useState("");
   const captcha = useRef<HCaptcha>();
 

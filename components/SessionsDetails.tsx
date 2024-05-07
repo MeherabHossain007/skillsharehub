@@ -12,7 +12,7 @@ const SessionsDetails = ({ item }) => {
           <img className="rounded-lg" src={img} alt="" />
           <div className="absolute right-[-70px] top-[90px]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={group} alt="" />
+            <img src={group.src} alt="" />
           </div>
         </figure>
         <div className="card-body">

@@ -1,6 +1,4 @@
 import { IoIosStar } from "react-icons/io";
-
-import { Image } from "next/image";
 import { FaBookBookmark } from "react-icons/fa6";
 import { IoPersonSharp } from "react-icons/io5";
 import { FaTrophy } from "react-icons/fa6";

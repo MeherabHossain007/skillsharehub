@@ -102,7 +102,7 @@ const Filter = () => {
           {/* FILTER OPTIONS */}
           <div className=" md:w-[320px] mt-[40px]">
             <div className="collapse collapse-plus bg-white">
-              <input type="radio" name="my-accordion-3" checked="checked" />
+              <input type="radio" name="my-accordion-3" />
               <div className="collapse-title text-xl font-medium">Rating</div>
               <div className="collapse-content ">
                 <div className="rating">

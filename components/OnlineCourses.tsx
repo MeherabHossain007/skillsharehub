@@ -85,7 +85,6 @@ const OnlineCourses = () => {
           <h1 className=" text-[24px] font-semibold text-white text-center py-[20px]">Your Performane</h1>
             <div
               className="radial-progress bg-[#5A66FF] text-primary-content border-4 border-primary h-[250px] w-[250px] md:ml-[50px] my-[10px]"
-              style={{ "--value": 50 }}
               role="progressbar"
             >
               50%
