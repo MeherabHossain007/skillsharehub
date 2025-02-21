@@ -11,6 +11,8 @@
   "dependencies": {
     "@cometchat-pro/chat": "^3.0.11",
     "@hcaptcha/react-hcaptcha": "^1.10.1",
+    "@material/web": "^2.2.0",
+    "@rollup/plugin-node-resolve": "^16.0.0",
     "@supabase/auth-helpers-nextjs": "^0.8.7",
     "@supabase/auth-ui-react": "^0.4.7",
     "@supabase/auth-ui-shared": "^0.1.8",
@@ -24,6 +26,7 @@
     "react-native-circular-progress-indicator": "^4.4.2",
     "react-password-strength-bar": "^0.4.1",
     "react-simple-captcha": "^9.3.1",
+    "rollup": "^4.34.8",
     "sweetalert2": "^11.10.3"
   },
   "devDependencies": {

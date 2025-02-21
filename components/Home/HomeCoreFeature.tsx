@@ -1,11 +1,11 @@
 import Image from "next/image";
-import course from "../assets/images/course.png";
-import one from "../assets/images/one.png";
-import progress from "../assets/images/progress.png";
-import comunity from "../assets/images/comunity.png";
-import market from "../assets/images/market.png";
-import certi from "../assets/images/certificate.png";
-import tutor from "../assets/images/tutor.png";
+import course from "../../assets/images/course.png";
+import one from "../../assets/images/one.png";
+import progress from "../../assets/images/progress.png";
+import comunity from "../../assets/images/comunity.png";
+import market from "../../assets/images/market.png";
+import certi from "../../assets/images/certificate.png";
+import tutor from "../../assets/images/tutor.png";
 
 const HomeCoreFeature = () => {
   return (

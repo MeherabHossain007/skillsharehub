@@ -1,6 +1,6 @@
 import Image from "next/image";
-import designer from "../assets/images/designer.png";
-import programmer from "../assets/images/programmer.png";
+import designer from "../../assets/images/designer.png";
+import programmer from "../../assets/images/programmer.png";
 
 const HomeCateogry = () => {
   return (

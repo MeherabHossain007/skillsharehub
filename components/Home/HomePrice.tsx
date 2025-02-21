@@ -1,4 +1,3 @@
-import icon from "../app/images/certificate.png";
 const HomePrice = () => {
   return (
     <div>

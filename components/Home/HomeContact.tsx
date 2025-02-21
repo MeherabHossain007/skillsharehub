@@ -1,5 +1,3 @@
-import touch1 from "../app/images/touch1.png";
-
 const HomeContact = () => {
   return (
     <>
