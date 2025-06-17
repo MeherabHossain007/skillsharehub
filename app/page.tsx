@@ -10,15 +10,14 @@ import Navbar from "@/components/layout/Navbar";
 const HomePage = () => {
   return (
     <div>
-      <div className=" max-w-screen-xl mx-auto">
-        <Navbar></Navbar>
+      <div className="container mx-auto">
         <HomeHero></HomeHero>
         <HomeCoreFeature></HomeCoreFeature>
         <HomeCateogry></HomeCateogry>
         <HomeTestimonials></HomeTestimonials>
-        <HomePrice></HomePrice>
-        <HomeContact></HomeContact>
       </div>
+      <HomePrice></HomePrice>
+      <HomeContact></HomeContact>
       <Footer></Footer>
     </div>
   );

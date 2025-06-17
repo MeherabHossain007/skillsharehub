@@ -9,6 +9,7 @@ module.exports = {
       "i.ibb.co",
       "lbqycppmvrcvlgiwsqfm.supabase.co",
       "placeholdit.img",
+      "mdbcdn.b-cdn.net",
     ],
   },
 };

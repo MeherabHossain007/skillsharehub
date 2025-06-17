@@ -4,61 +4,98 @@ import programmer from "../../assets/images/programmer.png";
 
 const HomeCateogry = () => {
   return (
-    <div>
-      <h1 className="text-center md:text-[48px] text-3xl font-semibold md:pr-[120px] mt-[150px] md:mb-[40px]">
-        Popular Categories
-      </h1>
-      <p className="text-center md:w-[580px] md:ml-[540px]">
-        {/* eslint-disable-next-line react/no-unescaped-entities */}
-        Discover the impact we've had on others' lives. Real experiences from
-        real people who trust us. Read about the results others
-        <br /> have achieved with us.
-      </p>
-      <div className="flex md:px-[530px] my-[20px] px-[50px]">
-        <input
-          className="flex md:w-[596px] md:p-[20px] p-[25px] items-center gap-16 rounded-full bg-gray-200"
-          type="text"
-          placeholder="Search on our populer category  "
-        />
-        <div className="mt-[10px] ml-[10px]">
-          <button type="submit" className="btn bg-[#5A66FF] text-white">
-            Search
+    <section className="max-w-7xl mx-auto px-4 py-12 md:py-24">
+      {/* Header Section */}
+      <div className="text-center mb-12">
+        <h1 className="text-3xl md:text-4xl lg:text-[48px] font-semibold mb-6">
+          Popular Categories
+        </h1>
+        <p className="text-gray-600 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+          Discover the impact we&apos;ve had on others&apos; lives. Real experiences from
+          real people who trust us. Read about the results others have achieved
+          with us
+        </p>
+      </div>
+
+      {/* Search Section */}
+      <div className="flex justify-center mb-16">
+        <div className="relative w-full max-w-2xl">
+          <input
+            type="text"
+            placeholder="Search on our popular category"
+            className="w-full py-4 px-6 pr-16 rounded-full bg-gray-100 border-none outline-none text-gray-700 placeholder-gray-500"
+          />
+          <button className="absolute right-2 top-2 bottom-2 bg-[#5A66FF] text-white px-6 rounded-full hover:bg-[#4A56EF] transition-colors duration-200">
+            <svg
+              className="w-5 h-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+              />
+            </svg>
           </button>
         </div>
       </div>
-      <div className="md:flex gap-[213px] md:mt-[100px] mt-[10px] justify-evenly ">
-        <div>
-          <Image src={designer} alt="designer photo"></Image>
-          <div className="w-[300px] text-center md:mt-[100px] mt-[20px] mx-[100px] ">
-            <h1 className="text-[22px] font-semibold">
-              Designer
-              <span className="text-[18px] border rounded-lg py-[3px] px-[10px] bg-[#5A66FF] text-white">
+
+      {/* Categories Grid */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 max-w-6xl mx-auto">
+        {/* Designer Category */}
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-8 w-full max-w-md h-80 flex items-center justify-center">
+            <Image
+              src={designer}
+              alt="Designer illustration"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <h2 className="text-2xl md:text-3xl font-semibold text-black">
+                Designer
+              </h2>
+              <span className="bg-[#5A66FF] text-white text-sm font-medium px-3 py-1 rounded-lg">
                 PRO
               </span>
-            </h1>
-            <p className="text-[14px] py-[10px] md:py-[0px]">
-              Unleash your creativity with our designing tutorial. Explore the
-              principles of graphic design.
+            </div>
+            <p className="text-gray-600 text-base leading-relaxed max-w-sm mx-auto">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              auctor massa vel mi consequat malesuada.
             </p>
           </div>
         </div>
-        <div>
-          <Image src={programmer} alt="programmer photo"></Image>
-          <div className="w-[300px] text-center mt-[10px] mx-[80px]">
-            <h1 className="text-[22px] font-semibold">
-              Programming
-              <span className="text-[18px] border rounded-lg py-[3px] px-[10px] bg-[#5A66FF] text-white">
+
+        {/* Programming Category */}
+        <div className="flex flex-col items-center text-center">
+          <div className="mb-8 w-full max-w-md h-80 flex items-center justify-center">
+            <Image
+              src={programmer}
+              alt="Programming illustration"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="space-y-4">
+            <div className="flex items-center justify-center gap-3 flex-wrap">
+              <h2 className="text-2xl md:text-3xl font-semibold text-black">
+                Programming
+              </h2>
+              <span className="bg-[#5A66FF] text-white text-sm font-medium px-3 py-1 rounded-lg">
                 PRO
               </span>
-            </h1>
-            <p className=" text-[14px] py-[10px] md:py-[0px]">
-              Master coding skills with our programming tutorial. From
-              fundamentals to advanced concepts
+            </div>
+            <p className="text-gray-600 text-base leading-relaxed max-w-sm mx-auto">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean
+              auctor massa vel mi consequat malesuada.
             </p>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

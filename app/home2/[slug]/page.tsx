@@ -1,7 +1,7 @@
 import React from "react";
-import Navbar from "../../components/NavbarSadab";
-import Footer from "../../components/FooterSadab";
-import Course from "../../components/CourseSadab";
+import Navbar from "../../../components/NavbarSadab";
+import Footer from "../../../components/FooterSadab";
+import Course from "../../../components/CourseSadab";
 import { useRouter } from "next/router";
 
 function Page({ params }: { params: { slug: any } }) {

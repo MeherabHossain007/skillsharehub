@@ -1,4 +1,6 @@
 import Image from "next/image";
+
+// Import images
 import course from "../../assets/images/course.png";
 import one from "../../assets/images/one.png";
 import progress from "../../assets/images/progress.png";
@@ -8,72 +10,106 @@ import certi from "../../assets/images/certificate.png";
 import tutor from "../../assets/images/tutor.png";
 
 const HomeCoreFeature = () => {
+  const features = [
+    {
+      image: course,
+      title: "Short Courses",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor massa vel mi consequat malesuada.",
+    },
+    {
+      image: one,
+      title: "One To One",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor massa vel mi consequat malesuada.",
+    },
+    {
+      image: progress,
+      title: "Progress Tracking",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor massa vel mi consequat malesuada.",
+    },
+    {
+      image: comunity,
+      title: "Community Forum",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor massa vel mi consequat malesuada.",
+    },
+    {
+      image: market,
+      title: "Course Marketplace",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor massa vel mi consequat malesuada.",
+    },
+    {
+      image: certi,
+      title: "Certification",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor massa vel mi consequat malesuada.",
+    },
+    {
+      image: tutor,
+      title: "Request Tutor",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean auctor massa vel mi consequat malesuada.",
+    },
+  ];
+
   return (
-    <div>
-      <h1 className="text-center md:text-[48px] text-3xl font-semibold  md:mt-[150px] md:mb-[40px]">
+    <section className="max-w-7xl mx-auto px-4 py-12 md:py-24">
+      <h1 className="text-center text-3xl md:text-4xl lg:text-[48px] font-semibold mb-12 md:mb-16">
         Core Features
       </h1>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <div className="md:flex justify-around pl-[50px] md:pl-[0px]">
-        <div className=" w-[300px] text-center mt-[50px]">
-          <Image className="ml-[100px]" src={course} alt=""></Image>
-          <h1 className="text-[22px] font-semibold"> Short Course</h1>
-          <p className=" text-[16px]">
-            Concise and focused learning modules covering specific topics
-          </p>
-        </div>
-        <div className=" w-[300px] text-center mt-[50px]">
-          <Image className="ml-[100px]" src={one} alt=""></Image>
-          <h1 className="text-[22px] font-semibold"> One To One </h1>
-          <p className=" text-[16px]">
-            Personalized learning experience with individualized attention.
-          </p>
-        </div>
-        <div className=" w-[300px] text-center mt-[50px]">
-          <Image className="ml-[100px]" src={progress} alt=""></Image>
-          <h1 className="text-[22px] font-semibold"> Progress Tracking</h1>
-          <p className=" text-[16px]">
-            Real-time monitoring of individual learning journeys.
-          </p>
-        </div>
-        <div className=" w-[300px] text-center mt-[50px]">
-          <Image className="ml-[100px]" src={comunity} alt=""></Image>
-          <h1 className="text-[22px] font-semibold"> Community  Forum</h1>
-          <p className=" text-[16px]">
-            Interactive platform for users to engage in discussions.
-          </p>
-        </div>
+
+      {/* First row - 4 items */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-8 md:mb-12">
+        {features.slice(0, 4).map((feature, index) => (
+          <div key={index} className="flex flex-col items-center text-center">
+            <div className="mb-6 w-20 h-20 flex items-center justify-center">
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+            <h3 className="text-xl md:text-2xl font-semibold mb-4">
+              {feature.title}
+            </h3>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xs">
+              {feature.description}
+            </p>
+          </div>
+        ))}
       </div>
-      {/* last 3 feature list  */}
-      <div>
-        <div className="md:flex justify-evenly pl-[50px] md:pl-[0px]">
-          <div className=" w-[300px] text-center mt-[50px]">
-            <Image className="ml-[100px]" src={market} alt=""></Image>
-            <h1 className="text-[22px] font-semibold">Course Marketplace </h1>
-            <p className=" text-[16px]">
-              Diverse selection of courses from various domains and expertise
-              levels.
+
+      {/* Second row - 3 items centered */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 max-w-4xl mx-auto">
+        {features.slice(4, 7).map((feature, index) => (
+          <div
+            key={index + 4}
+            className="flex flex-col items-center text-center"
+          >
+            <div className="mb-6 w-20 h-20 flex items-center justify-center">
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={64}
+                height={64}
+                className="object-contain"
+              />
+            </div>
+            <h3 className="text-xl md:text-2xl font-semibold mb-4">
+              {feature.title}
+            </h3>
+            <p className="text-gray-600 text-sm md:text-base leading-relaxed max-w-xs">
+              {feature.description}
             </p>
           </div>
-          <div className=" w-[300px] text-center mt-[50px]">
-            <Image className="ml-[100px]" src={certi} alt=""></Image>
-            <h1 className="text-[22px] font-semibold"> Certification</h1>
-            <p className=" text-[16px]">
-              Certificates validate the skills acquired and enhance credibility
-              in the respective field.
-            </p>
-          </div>
-          <div className=" w-[300px] text-center mt-[50px] ">
-            <Image className="ml-[100px]" src={tutor} alt=""></Image>
-            <h1 className="text-[22px] font-semibold md:my-[5px]">Request Tutor</h1>
-            <p className=" text-[16px]">
-              Capability for users to request a tutor based on specific learning
-              needs.
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
-    </div>
+    </section>
   );
 };
 

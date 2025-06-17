@@ -1,8 +1,8 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Navbar from "../../components/NavbarSadab";
-import Footer from "../../components/FooterSadab";
-import Instructor from "../../components/Instructor";
+import Navbar from "../../../components/NavbarSadab";
+import Footer from "../../../components/FooterSadab";
+import Instructor from "../../../components/Instructor";
 import { supabase } from "@/utils/supabase/client";
 
 function Page({ params }: { params: { slug: any } }) {
