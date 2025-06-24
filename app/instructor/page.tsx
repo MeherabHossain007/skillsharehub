@@ -1,7 +1,7 @@
 "use client";
 import InstructorHero from "../../components/InstructorHero";
 import InstructorFilter from "../../components/InstructorFilter";
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/shared/Navbar";
 import NavbarSadab from "../../components/NavbarSadab";
 import { useEffect, useState } from "react";
 import { supabase } from "@/utils/supabase/client";

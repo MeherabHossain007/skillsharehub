@@ -9,7 +9,7 @@ import Profile from "../../components/Profile";
 import YourCourse from "../../components/YourCourse";
 import OnlineCourses from "../../components/OnlineCourses";
 import Sessions from "../../components/Sessions";
-import Navbar from "@/components/layout/Navbar";
+import Navbar from "@/components/shared/Navbar";
 import { supabase } from "@/utils/supabase/client";
 
 interface User {

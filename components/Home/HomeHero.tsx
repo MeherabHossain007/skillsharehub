@@ -1,6 +1,6 @@
 import homeImage from "../../assets/images/home.png";
 import Image from "next/image";
-import Button from "../ui/Button";
+import Button from "../ui/CustomButton";
 
 const HomeHero = () => {
   return (

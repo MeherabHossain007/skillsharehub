@@ -10,6 +10,7 @@ module.exports = {
       "lbqycppmvrcvlgiwsqfm.supabase.co",
       "placeholdit.img",
       "mdbcdn.b-cdn.net",
+      "daisyui.com",
     ],
   },
 };
